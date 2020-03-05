@@ -13,7 +13,7 @@ import torch
 
 class RandomElasticDeformation(object):
     """
-    对目标图像进行随机仿射变换,接受数据为3维或2维图像，数据类型为image, label, 维度均为ndarry(z,x,y)或ndarry(x,y)。
+    对目标图像进行随机仿射变换,接受数据为3维或2维图像，数据类型为image, label, 维度均为ndarray(z,x,y)或ndarray(x,y)。
     """
     def __init__(self, image):
         assert isinstance(image, np.ndarray)
@@ -154,6 +154,7 @@ class LabelScatter(object):
     独热处理
 
     Attributes:
+        label_class_number: 分为几类
 
     """
     def __init__(self, label_class_number):

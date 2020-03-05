@@ -1,9 +1,9 @@
 import torch.nn as nn
 
 
-class Dice_Loss(nn.Module):
+class DiceLoss(nn.Module):
     def __init__(self):
-        super(Dice_Loss, self).__init__()
+        super(DiceLoss, self).__init__()
 
     def forward(self, prediction, true):
         b = prediction.size(0)
@@ -14,9 +14,9 @@ class Dice_Loss(nn.Module):
         return loss
 
 
-class Focal_Loss(nn.Module):
+class FocalLoss(nn.Module):
     def __init__(self, power=2, alpha=0.25):
-        super(Focal_Loss, self).__init__()
+        super(FocalLoss, self).__init__()
         self.power = power
         self.alpha = alpha
 
@@ -33,8 +33,8 @@ class Focal_Loss(nn.Module):
 class HybridLoss(nn.Module):
     def __init__(self, lambda_a=0.5, classes=23):
         super(HybridLoss, self).__init__()
-        self.dice_loss11 = Dice_Loss()
-        self.focal_loss22 = Focal_Loss()
+        self.dice_loss11 = DiceLoss()
+        self.focal_loss22 = FocalLoss()
         self.lambda_a = lambda_a
         self.classes = classes
 
@@ -50,8 +50,9 @@ class HybridLoss(nn.Module):
         total_loss = total_loss * classes
         return total_loss
 
+
 if __name__ == '__main__':
-    b = Focal_Loss()
+    b = FocalLoss()
     print(b.alpha)
     a = HybridLoss(lambda_a=0.6, classes=23)
     print(a.lambda_a)

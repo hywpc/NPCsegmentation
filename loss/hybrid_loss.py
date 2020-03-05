@@ -33,14 +33,14 @@ class FocalLoss(nn.Module):
 class HybridLoss(nn.Module):
     def __init__(self, lambda_a=0.5, classes=23):
         super(HybridLoss, self).__init__()
-        self.dice_loss11 = DiceLoss()
-        self.focal_loss22 = FocalLoss()
+        self.dice_loss1 = DiceLoss()
+        self.focal_loss2 = FocalLoss()
         self.lambda_a = lambda_a
         self.classes = classes
 
     def forward(self, prediction, true):
-        dice_loss11 = self.dice_loss11
-        focal_loss22 = self.focal_loss22
+        dice_loss11 = self.dice_loss1
+        focal_loss22 = self.focal_loss2
         lambda_a = self.lambda_a
         classes = self.classes
 

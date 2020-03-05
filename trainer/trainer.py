@@ -45,9 +45,10 @@ class ModelTrainer:
             input_data, label = data['image'].float().cuda(), data['label'].cuda()
             # forward pass
             output = self.model(input_data)
+            # print(output.size())
             # compute the loss
             loss = self.loss_criterion(output, label)
-            train_loss.update(loss.item, self.train_loader.size(0))
+            train_loss.update(loss.item())
             # compute gradients and update parameters
             self.optimizer.zero_grad()
             loss.backward()
@@ -77,7 +78,7 @@ class ModelTrainer:
                 eval_data, eval_label = val_data['image'].float().cuda(), val_data['label'].cuda()
                 output = self.model(eval_data)
                 # 模型最后一层需要进行softmax
-                eval_score = self.val_criterion(output, val_data.size(0))
+                eval_score = self.val_criterion(output, eval_label)
                 val_scores.update(eval_score.item())
         return val_scores.avg
 

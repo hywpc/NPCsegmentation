@@ -6,6 +6,7 @@ class DiceLoss(nn.Module):
         super(DiceLoss, self).__init__()
 
     def forward(self, prediction, true):
+        prediction = prediction.clamp(min=1e-5, max=1.0)
         b = prediction.size(0)
         p = prediction.view(b, -1)
         t = true.view(b, -1)
@@ -21,6 +22,7 @@ class FocalLoss(nn.Module):
         self.alpha = alpha
 
     def forward(self, prediction, true):
+        prediction = prediction.clamp(min=1e-5, max=1.0)
         b, c, w, h, d = prediction.size()
         p = prediction.view(b, -1)
         t = true.view(b, -1)

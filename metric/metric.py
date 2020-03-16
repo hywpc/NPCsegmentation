@@ -44,8 +44,8 @@ class DiceCoefficient():
         target = target.float()
         # Compute per channel Dice Coefficient
         intersect = (prediction * target).sum(-1)
-        if weight is not None:
-            intersect = weight * intersect
+        # if weight is not None:
+            # intersect = weight * intersect
 
         denominator = (prediction + target).sum(-1)
         return 2.0 * intersect / denominator.clamp(min=epsilon)

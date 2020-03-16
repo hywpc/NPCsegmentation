@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bb5e431a-c44d-42af-ab7f-1485eb985161" name="Default Changelist" comment="" />
+    <list default="true" id="bb5e431a-c44d-42af-ab7f-1485eb985161" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/net/vnet.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/metric/metric.py" beforeDir="false" afterPath="$PROJECT_DIR$/metric/metric.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/net/Vnet1.py" beforeDir="false" afterPath="$PROJECT_DIR$/net/Vnet1.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/train.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -42,8 +48,8 @@
       <recent name="E:\3.Work\siat_project" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.train (1)">
-    <configuration name="data_anatomy" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python.Vnet1">
+    <configuration name="Vnet1" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="siat_project" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -51,11 +57,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/data" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/net" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/data/data_anatomy.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/net/Vnet1.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -150,11 +156,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.Vnet1" />
         <item itemvalue="Python.train (1)" />
         <item itemvalue="Python.trainer" />
         <item itemvalue="Python.metric" />
         <item itemvalue="Python.hybrid_loss" />
-        <item itemvalue="Python.data_anatomy" />
       </list>
     </recent_temporary>
   </component>
@@ -195,35 +201,35 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1583202136895" />
-    <state width="1899" height="262" key="GridCell.Tab.0.bottom" timestamp="1583399024457">
-      <screen x="0" y="31" width="1920" height="1000" />
+    <state width="1914" height="204" key="GridCell.Tab.0.bottom" timestamp="1584328664386">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="201" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1583389506245" />
+    <state width="1914" height="204" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1584328664386" />
     <state width="1899" height="262" key="GridCell.Tab.0.bottom/0.31.1920.1000@0.31.1920.1000" timestamp="1583399024457" />
-    <state width="1899" height="262" key="GridCell.Tab.0.center" timestamp="1583399024456">
-      <screen x="0" y="31" width="1920" height="1000" />
+    <state width="1914" height="204" key="GridCell.Tab.0.center" timestamp="1584328664385">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="201" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1583389506245" />
+    <state width="1914" height="204" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1584328664385" />
     <state width="1899" height="262" key="GridCell.Tab.0.center/0.31.1920.1000@0.31.1920.1000" timestamp="1583399024456" />
-    <state width="1899" height="262" key="GridCell.Tab.0.left" timestamp="1583399024456">
-      <screen x="0" y="31" width="1920" height="1000" />
+    <state width="1914" height="204" key="GridCell.Tab.0.left" timestamp="1584328664385">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="201" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1583389506244" />
+    <state width="1914" height="204" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1584328664385" />
     <state width="1899" height="262" key="GridCell.Tab.0.left/0.31.1920.1000@0.31.1920.1000" timestamp="1583399024456" />
-    <state width="1899" height="262" key="GridCell.Tab.0.right" timestamp="1583399024457">
-      <screen x="0" y="31" width="1920" height="1000" />
+    <state width="1914" height="204" key="GridCell.Tab.0.right" timestamp="1584328664385">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="201" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1583389506245" />
+    <state width="1914" height="204" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1584328664385" />
     <state width="1899" height="262" key="GridCell.Tab.0.right/0.31.1920.1000@0.31.1920.1000" timestamp="1583399024457" />
     <state x="428" y="169" width="1022" height="732" key="SettingsEditor" timestamp="1583392685551">
       <screen x="0" y="31" width="1920" height="1000" />
     </state>
     <state x="428" y="143" key="SettingsEditor/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1583202669732" />
     <state x="428" y="169" width="1022" height="732" key="SettingsEditor/0.31.1920.1000@0.31.1920.1000" timestamp="1583392685551" />
-    <state x="640" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1583283940331">
+    <state x="640" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1583994437210">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="640" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1583283940331" />
+    <state x="640" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1583994437210" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

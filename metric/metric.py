@@ -36,25 +36,7 @@ class DiceCoefficient():
             return tensor.reshape(c, -1)
 
     @staticmethod
-    def compute_per_channel_dice(prediction, target, epsilon=1e-5, ignore_index=None, weight=None):
-        """
-        :param prediction: tensor
-        :param target: tensor
-        :param epsilon:
-        :param ignore_index:
-        :param weight:
-        :return: (tensor)
-        """
-        # input and target shapes must match
-        # assert prediction.size() == target.size(), "'input' and 'target' must have the same shape"
-
-        # mask ignore_index if present
-        if ignore_index is not None:
-            mask = target.clone().ne_(ignore_index)
-            mask.requires_grad = False
-
-            prediction = prediction * mask
-            target = target * mask
+    def compute_per_channel_dice(prediction, target, epsilon=1e-5):
 
         prediction = DiceCoefficient.flatten(prediction)
         target = DiceCoefficient.flatten(target)

@@ -63,8 +63,8 @@ class ModelTrainer:
                     print(val_score)
                     # set the model back to training mode
                     self.model.train()
-                    if val_score >= 0.8:
-                        # 当系数大于80%时保存模型参数
+                    if val_score >= 0.7:
+                        # 当系数大于70%时保存模型参数
                         place = self.parameter_dir + str(val_score)
                         torch.save(self.model.state_dict(), place)
 

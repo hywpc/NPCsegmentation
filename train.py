@@ -1,6 +1,7 @@
 import torch.optim as optim
 from torch.utils.data import DataLoader
-from net.Net_1pool import *
+# from net.Net_1pool import *
+from net.vnet import VNet
 from data.data_anatomy import *
 from loss.hybrid_loss import *
 from metric.metric import DiceCoefficient
@@ -8,7 +9,8 @@ from trainer.trainer import ModelTrainer
 
 
 if __name__ == '__main__':
-    model = AnatomyNet(classes=23)
+    # model = AnatomyNet(classes=23)
+    model = VNet(elu=False, nll=False)
     optimizer = optim.Adam(model.parameters(), lr=2e-4, weight_decay=1e-4)
     lr_scheduler = None
     # train_set = NPCDataSet('E:\\3.Work\\data\\HaN_OAR\\train', scatter_label=False, transform=False, crop=True,crop_size=(80, 160, 160), mode='train')

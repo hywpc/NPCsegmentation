@@ -59,9 +59,9 @@ class DiceCoefficient():
         # Average across channels in order to get the final score
         classes_mean = self.classes_mean
         if classes_mean:
-            return torch.mean(self.compute_per_channel_dice(prediction, target, epsilon=self.epsilon, ignore_index=self.ignore_index)[1:])
+            return torch.mean(self.compute_per_channel_dice(prediction, target)
         else:
-            return self.compute_per_channel_dice(prediction, target, epsilon=self.epsilon, ignore_index=self.ignore_index)[1:]
+            return self.compute_per_channel_dice(prediction, target)
 
 
 if __name__ == '__main__':

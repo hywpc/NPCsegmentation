@@ -180,6 +180,7 @@ class Vnet1(nn.Module):
         
         return output
 
+
 if __name__ == '__main__':
 
     net = Vnet1(start_ch=16, out_ch=23)

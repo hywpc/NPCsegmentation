@@ -22,7 +22,7 @@ if __name__ == '__main__':
     val_set = NPCDataSet('/home/hyw/data/HaN_OAR/validation/', scatter_label=True, transform=False, crop=False, crop_size=(80, 160, 160), mode='test')
     val_loader = DataLoader(val_set, batch_size=1, shuffle=True, num_workers=0, pin_memory=True)
     val_criterion = DiceCoefficient()
-    epochs = 400
+    epochs = 600
     validate_after_iter = 20
     trainer = ModelTrainer(model, optimizer, lr_scheduler, train_loader, loss_criterion, parameter_dir,
                            val_loader=val_loader, val_criterion=val_criterion,

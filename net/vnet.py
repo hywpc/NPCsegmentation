@@ -7,7 +7,7 @@ def passthrough(x, **kwargs):
     return x
 
 
-def ELUCons(elu):
+def ELUCons(elu, nchans):
     if elu:
         return nn.ELU(inplace=True)
     else:

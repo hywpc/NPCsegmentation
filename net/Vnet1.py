@@ -66,6 +66,12 @@ class Vnet1(nn.Module):
                 )
         return block
 
+    def up_block_double(self, in_ch, out_ch):
+        block = nn.Sequential(
+                nn.ConvTranspose3d(in_ch, out_ch, kernel_size=4, stride=2, padding=1),
+                )
+        return block
+
     def dropout_block(self, x):
         block = nn.Sequential(
                 nn.Dropout(p=x),
@@ -73,7 +79,7 @@ class Vnet1(nn.Module):
         return block
 
     def __init__(self, start_ch = 12, in_ch = 1, out_ch = 2, dropout_p=0.3):
-        super(Vnet1).__init__()
+        super(Vnet1, self).__init__()
 
         self.block1 = self.block_1_layer(in_ch, start_ch)
         self.block1_skip = self.skip_block(in_ch, start_ch)
@@ -118,7 +124,7 @@ class Vnet1(nn.Module):
         self.deep3 = self.up_block_double(start_ch*6, start_ch*3)
 
         self.softmax = nn.Sequential(
-                # nn.Conv3d(start_ch, out_ch, 1, 1),
+                #nn.Conv3d(start_ch, out_ch, 1, 1),
                 nn.Conv3d(start_ch*4, out_ch, 1, 1),
                 nn.BatchNorm3d(out_ch),
                 nn.ReLU(),
@@ -159,27 +165,26 @@ class Vnet1(nn.Module):
         block9_input = torch.cat([block9_input_before, block1_out], dim=1)
         block9_out = self.block9(block9_input) + self.block9_skip(block9_input)
         
-        # deep1_out = self.deep1(block6_input_before)
+        deep1_out = self.deep1(block6_input_before)
         
-        # deep2_input = torch.cat([block7_input_before, deep1_out], dim=1)
-        # deep2_out = self.deep2(deep2_input)
+        deep2_input = torch.cat([block7_input_before, deep1_out], dim=1)
+        deep2_out = self.deep2(deep2_input)
         
-        # deep3_input = torch.cat([block8_input_before, deep2_out], dim=1)
-        # deep3_out = self.deep3(deep3_input)
+        deep3_input = torch.cat([block8_input_before, deep2_out], dim=1)
+        deep3_out = self.deep3(deep3_input)
         
-        # final_input = torch.cat([block9_out, deep3_out], dim=1)
+        final_input = torch.cat([block9_out, deep3_out], dim=1)
         
         # final_input = block9_out
-        output = self.softmax(block9_out)
+        output = self.softmax(final_input)
         
         return output
 
-
 if __name__ == '__main__':
-    net = Vnet1(start_ch=16, out_ch=23)
-    # net.apply(init)
 
-    net = net.cuda()
-    data = torch.randn((1, 1, 96, 96, 96)).cuda()
+    net = Vnet1(start_ch=16, out_ch=23)
+
+    net = net.cuda(0)
+    data = torch.randn((1, 1, 80, 160, 160)).cuda()
     res = net(data)
     print(res.size())

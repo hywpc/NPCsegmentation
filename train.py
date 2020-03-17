@@ -11,7 +11,7 @@ from trainer.trainer import ModelTrainer
 if __name__ == '__main__':
     # model = AnatomyNet(classes=23)
     model = Vnet1(start_ch=16, out_ch=23)
-    optimizer = optim.Adam(model.parameters(), lr=2e-4, weight_decay=1e-4)
+    optimizer = optim.Adam(model.parameters(), lr=1e-5, weight_decay=1e-4)
     lr_scheduler = None
     # train_set = NPCDataSet('E:\\3.Work\\data\\HaN_OAR\\train', scatter_label=False, transform=False, crop=True,crop_size=(80, 160, 160), mode='train')
     train_set = NPCDataSet('/home/hyw/data/HaN_OAR/train/', scatter_label=True, transform=False, crop=True, crop_size=(80, 160, 160), mode='train')
